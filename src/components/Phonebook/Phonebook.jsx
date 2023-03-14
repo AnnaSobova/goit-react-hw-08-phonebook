@@ -1,20 +1,23 @@
 
 import { useState } from 'react';
-import { useGetContactsQuery, useAddContactMutation } from 'redux/contactsApi';
+import { useSelector, useDispatch } from 'react-redux';
 import Notiflix from 'notiflix';
 
 import InputName from './Input/InputName';
 import LabelPhoneBook from './Label/Label';
-import ButtonSubmit from './Button/ButtonSubmit';
 import InputNumber from './Input/InputNumber';
 import FormPhonebook from './Form/Form';
+import contactsOperation from 'redux/contacts/contactsOperation';
+import Button from '@mui/material/Button';
+
 
 const Phonebook = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  
-  const {data:contacts}= useGetContactsQuery();
-  const [addContact] = useAddContactMutation();
+  const dispatch = useDispatch();
+  const contacts = useSelector(state => state.contacts.items);
+  const isLoad = useSelector(state => state.contacts.isLoad);
+
 
   const handleChange = e => {
     switch (e.currentTarget.name) {
@@ -34,24 +37,19 @@ const Phonebook = () => {
     setPhone('');
   };
 
-  const formSubmitHandle = async data => {
+  const formSubmitHandle = data => {
     
     if (contacts.filter(contact => contact.name.toLowerCase() === data.name.toLowerCase()).length > 0) {
       Notiflix.Notify.warning(`${data.name} is already in contacts`);
       return;
     }
-    try{
-      await addContact(data)
-      Notiflix.Notify.success('Contact already added');
-    } catch (error){ 
-      Notiflix.Notify.failure('Something wrong.... try again');
-    }
+    dispatch(contactsOperation.addContact(data));
     
   };
 
   const clickOnBtnSubmit = async e => {
     e.preventDefault();
-    formSubmitHandle({ name, phone });
+    formSubmitHandle({ name, number: phone });
     reset();
   };
 
@@ -63,7 +61,15 @@ const Phonebook = () => {
       <LabelPhoneBook title="Number">
         <InputNumber value={phone} onChange={handleChange} />
       </LabelPhoneBook>
-      <ButtonSubmit text="Add contact" />
+      <Button
+        variant="contained"
+        size="medium"
+        type="submit"
+        className="button-signup"
+        disabled={isLoad}
+      >
+        Add
+        </Button>
     </FormPhonebook>
   );
 };
