@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MainContainer from './Container.styled'
+import {MainContainer, Title} from './Container.styled'
 
 
 const Container =({title, children})=>(
-    <MainContainer>
-        <h1>{title}</h1>
+    <>
+     <MainContainer>
+        <Title>{title}<Title/>
         {children}
     </MainContainer>
-)
+    </>
+   
+);
 export default Container;
 
 Container.propTypes={
