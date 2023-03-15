@@ -1,11 +1,11 @@
-import React from 'react';
-import Button from './ButtonSubmit.styled';
-import PropTypes from 'prop-types';
+// import React from 'react';
+// import Button from './ButtonSubmit.styled';
+// import PropTypes from 'prop-types';
 
-const ButtonSubmit = ({text})=> <Button type="submit">{text}</Button>
+// const ButtonSubmit = ({text})=> <Button type="submit">{text}</Button>
 
-export default ButtonSubmit;
+// export default ButtonSubmit;
 
-ButtonSubmit.propTypes={
- text:PropTypes.string.isRequired,
-};
+// ButtonSubmit.propTypes={
+//  text:PropTypes.string.isRequired,
+// };

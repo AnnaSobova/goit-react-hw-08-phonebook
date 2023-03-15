@@ -1,8 +1,7 @@
 import React from 'react';
 import Input from './Input.styled';
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {filterContacts} from 'redux/contactSlise';
-
 
 
 const InputFilter = () => {
@@ -24,8 +23,6 @@ const InputFilter = () => {
   </>
   )
 }
-
-  
 
 export default InputFilter;
 
