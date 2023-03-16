@@ -6,7 +6,7 @@ import {MainContainer, Title} from './Container.styled'
 const Container =({title, children})=>(
     <>
      <MainContainer>
-        <Title>{title}<Title/>
+        <Title>{title} </Title>
         {children}
     </MainContainer>
     </>

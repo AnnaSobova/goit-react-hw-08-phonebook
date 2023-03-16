@@ -1,24 +1,56 @@
+import SharedLayout from './SharedLayout/SharedLayout';
+import Home from '../pages/Home';
+import ContactsPage from '../pages/Contacts';
+import Register from './Register/Register';
+import LogIn from './LogIn/LogIn';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import authOperation from '../redux/auth/auth-operation';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import PublicRoute from './PublicRoute/PublicRoute';
 
-import Container from './container/Container';
-import Phonebook from './Phonebook/Phonebook';
-import Contacts from './Phonebook/Contacts/Contacts';
-import {useGetContactsQuery} from 'redux/contactsApi';
+const App = () => {
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(authOperation.fetchCurrentUser());
+  }, [dispatch]);
 
-const App = ()=> {
-  const { data, error, isLoading } = useGetContactsQuery();
+  return (
+    <BrowserRouter basename="/phonebook-service/">
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute>
+                <ContactsPage />
+              </PrivateRoute>
+            }
+          />
 
-return(
-  <Container title="Phonebook">
-     <Phonebook />
-          {!isLoading&& data.length > 0 ? (
-          <Contacts
-            name="Contacts"/>
-        ) : (
-          <p>Phonebook empty</p>
-        )}
-        {error&& <p> Sorry.. something wrong. Try again. </p>}
-  </Container>
+          <Route
+            path="register"
+            element={
+              <PublicRoute restricted>
+                <Register />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="login"
+            restricted
+            element={
+              <PublicRoute restricted>
+                <LogIn />
+              </PublicRoute>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
