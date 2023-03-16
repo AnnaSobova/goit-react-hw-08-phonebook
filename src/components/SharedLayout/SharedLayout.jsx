@@ -4,7 +4,7 @@ import {
     NavigationLink,
     AutorizationLink,
     LoginInfo,
-  } from './SharedJayout.styled';
+  } from './SharedLayout.styled';
   import { Outlet } from 'react-router-dom';
   import { useSelector } from 'react-redux';
   import UserMenu from 'components/UserMenu/UserMenu';

@@ -4,7 +4,7 @@ import ContactsPage from '../pages/Contacts';
 import Register from './Register/Register';
 import LogIn from './LogIn/LogIn';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import authOperation from '../redux/auth/auth-operation';
+import authOperation from '../redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import PrivateRoute from './PrivateRoute/PrivateRoute';

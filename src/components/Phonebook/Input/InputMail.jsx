@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../Input.styled';
+import Input from '../Input/Input.styled';
 import PropTypes from 'prop-types';
 
 const InputMail = ({onchange, value})=>(

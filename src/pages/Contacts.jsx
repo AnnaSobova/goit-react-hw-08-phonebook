@@ -1,9 +1,9 @@
 import Phonebook from '../components/Phonebook/Phonebook';
-import Main from '../components/Main/Main';
+import Main from '../components/container/Container';
 import Contacts from '../components/Phonebook/Contacts/Contacts';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import contactsOperation from 'redux/contacts/contacts-operation';
+import contactsOperation from 'redux/contacts/contactsOperation';
 import { EmptyPhonebookText } from 'components/Phonebook/Contacts/Contacts.styled';
 
 const ContactsPage = () => {
