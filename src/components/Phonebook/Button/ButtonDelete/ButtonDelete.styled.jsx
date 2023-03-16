@@ -12,6 +12,12 @@ const ButtonDeleteStyle = styled.button`
     background-color: #4949f0;
     color: black;
   }
+  & svg {
+    width: 30px;
+    height: 30px;
+  }
+  &:disabled {
+  }
 `;
 
 export default ButtonDeleteStyle ;
