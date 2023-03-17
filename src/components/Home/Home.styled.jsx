@@ -14,7 +14,7 @@ export const DevelopedBy = styled.p`
   color: black;
 `;
 
-export const LinkIconsList = styled.h2`
+export const LinkIconsList = styled.div`
   list-style: none;
   display: flex;
   align-items:center;

@@ -1,8 +1,5 @@
-import {
-  Title,
-  LinkIconsList,
-} from '../components/Home/Home.styled';
-// import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import {Title,LinkIconsList,} from '../components/Home/Home.styled';
+
 import { Link } from 'react-router-dom';
 
 const Home = () => {
