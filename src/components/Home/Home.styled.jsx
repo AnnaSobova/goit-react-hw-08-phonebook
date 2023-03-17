@@ -14,16 +14,18 @@ export const DevelopedBy = styled.p`
   color: black;
 `;
 
-export const LinkIconsList = styled.ul`
+export const LinkIconsList = styled.h2`
   list-style: none;
   display: flex;
+  align-items:center;
+  
   justify-content: center;
-  & li {
-    font-size: 36px;
+    display: grid;
+    font-size: 18px;
     &:not(:last-child) {
       margin-right: 10px;
-    }
-    & a {
+    
+    & Link{
       color: black;
       transition: color 250ms linear;
       &:hover,

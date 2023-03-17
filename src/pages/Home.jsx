@@ -1,26 +1,23 @@
 import {
   Title,
-  DevelopedBy,
   LinkIconsList,
 } from '../components/Home/Home.styled';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
+// import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <>
-      <Title>Welcome to Phonebook service</Title>
-      <DevelopedBy>Developed by </DevelopedBy>
+      <Title>Welcome to Phonebook service!</Title>
       <LinkIconsList>
-        <li>
-          <a href=" ">
-            <BsGithub />
-          </a>
-        </li>
-        <li>
-          <a href=" ">
-            <BsLinkedin />
-          </a>
-        </li>
+      <h2>
+        Want to join us? <Link to="register">Sign Up</Link>
+      </h2>
+
+        <h2>
+        Already have account? <Link to="login">Sign in</Link>
+      </h2>
+
       </LinkIconsList>
     </>
   );
