@@ -19,8 +19,7 @@ const Contacts =({name})=>{
   const filter = useSelector(state => state.filter);
   const normolizeFilter = filter.toLowerCase();
   const visibleContacts = data.filter(contact =>
-    contact.name.toLowerCase().includes(normolizeFilter)
-  );
+    contact.name.toLowerCase().includes(normolizeFilter));
 
 return(
   <ContactsItem>

@@ -1,17 +1,17 @@
 import React from 'react';
-import Input from '../Input/Input.styled';
+import Input from './Input.styled';
 import PropTypes from 'prop-types';
 
-const InputMail = ({onchange, value})=>(
+const InputMail = ({ onChange, value }) => (
     <Input
-     type= "email"
-     name= "email"
-     required
-     placeholder="Enter e-mail"
-     onchange = {onchange}
-     value = {value}
+      type="email"
+      name="email"
+      required
+      placeholder="Enter e-mail"
+      onChange={onChange}
+      value={value}
     />
-);
+  );
 
 export default InputMail;
 

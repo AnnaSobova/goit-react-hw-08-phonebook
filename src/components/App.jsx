@@ -18,7 +18,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <BrowserRouter basename="/phonebook-service/">
+    <BrowserRouter basename="/goit-react-hw-08-phonebook">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />

@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 const Input = styled.input`
   margin-top: 10px;
-  width: 50%;
+  width: 250px;
   height: 40px;
   font-size: 24px;
-  & ~ p {
+  & p {
     font-size: 14px;
   }
 `;
