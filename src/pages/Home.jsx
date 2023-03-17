@@ -10,8 +10,7 @@ const Home = () => {
       <h2>
         Want to join us? <Link to="register">Sign Up</Link>
       </h2>
-
-        <h2>
+      <h2>
         Already have account? <Link to="login">Sign in</Link>
       </h2>
 
