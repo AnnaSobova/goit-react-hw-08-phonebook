@@ -33,6 +33,6 @@ export const LinkIconsList = styled.div`
         color: orangered;
       }
     }
-    
+
   }
 `;
